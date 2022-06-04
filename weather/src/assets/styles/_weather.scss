@@ -1,12 +1,8 @@
 form {
   // container
   .container {
-    background-color: #6563a8;
-    width: fit-content;
-    border-radius: 10px;
+    background-color: #bedae1;
     display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     margin: 100px auto;
   }
@@ -18,7 +14,7 @@ form {
     margin-top: 50px;
     input {
       display: flex;
-      width: 300px;
+      width: 280px;
       padding: 10px 10px;
       font-size: 1rem;
       border-radius: 6px 0 0 6px;
@@ -43,7 +39,7 @@ form {
       }
     }
     button {
-      padding: 10px 10px;
+      padding: 5.3px 4px;
       border-radius: 0 6px 6px 0;
       cursor: pointer;
       font-size: 1rem;
@@ -56,69 +52,12 @@ form {
       }
     }
   }
-  // display results section
-  .result-container {
-    .card {
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-        0 10px 10px rgba(0, 0, 0, 0.22);
-    }
-    font-family: tahoma;
-    display: flex;
-    justify-content: center;
-    font-size: 2rem;
-    text-align: center;
-    .location {
-      display: flex;
-      font-size: 2rem;
-      justify-content: center;
-      .country {
-        font-size: 1rem;
-        background-color: #1d5eb3;
-        color: #fff;
-        width: fit-content;
-        height: fit-content;
-        padding: 3px;
-        border-radius: 5px;
-        margin: 0 5px;
-      }
-    }
-    .temp {
-      font-size: 1.2rem;
-      padding: 5px;
-      color: #fff;
-    }
-    img {
-      width: 150px;
-      padding: 20px 0;
-    }
-    .weather-state {
-      display: flex;
-      align-items: center;
+  .humidity {
+    font-size: 0.875rem;
+    svg {
+      margin: -6px 1px;
       font-size: 1.5rem;
-    }
-    .weather-details {
-      display: flex;
-      align-items: center;
-      font-size: 1rem;
-      justify-content: space-around;
-      .details-value {
-        font-size: 0.8rem;
-      }
-      .cold {
-        color: #4cb1ca;
-        margin: -3px 4px;
-      }
-      .hot {
-        color: #ee4300;
-        margin: -3px 4px;
-      }
-      .humidity {
-        font-size: 1.7rem;
-        margin: -9px -4px;
-        color: #00abd6;
-      }
+      color: #0367af;
     }
   }
 }
