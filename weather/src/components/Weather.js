@@ -2,9 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Chip from "@mui/material/Chip";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
+import {
+  CardContent,
+  Box,
+  Typography,
+  CardActionArea,
+  Button,
+} from "@mui/material";
 // react-toastify
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -45,22 +49,22 @@ const Weather = () => {
 
   return (
     <form onSubmit={submitHandler}>
-      <div className="search-container">
+      <Box component="div" className="search-container">
         <input
           type="text"
           placeholder="Search..."
           value={city}
           onChange={(e) => setCity(e.target.value)}
         />
-        <button type="submit">
+        <Button type="submit">
           {/* Search */}
           <SearchIcon />
-        </button>
-      </div>
+        </Button>
+      </Box>
       {/* displaying results */}
-      <div className="result-container ">
+      <Box component="div" className="result-container ">
         {myData.base && (
-          <Card className="container" sx={{ maxWidth: 330 }}>
+          <Card className="container" sx={{ maxWidth: 310 }}>
             <CardActionArea>
               <img
                 src={`https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${myData.weather[0]["icon"]}.svg`}
@@ -68,7 +72,7 @@ const Weather = () => {
                 width={180}
                 style={{ padding: "20px 0" }}
               />
-              <Typography variant="h5" component="div">
+              <Typography variant="h5" component="div" fontWeight={700}>
                 {myData.name}
                 <sup>
                   <Chip
@@ -84,13 +88,15 @@ const Weather = () => {
                 <Typography
                   variant="h5"
                   component="div"
-                  sx={{ display: "flex", justifyContent: " space-evenly" }}
+                  display="flex"
+                  justifyContent="space-evenly"
                 >
                   <Typography
                     className="weather-state"
                     gutterBottom
                     variant="h5"
                     component="div"
+                    fontWeight={700}
                   >
                     {myData.weather[0].description}
                   </Typography>
@@ -99,6 +105,7 @@ const Weather = () => {
                     gutterBottom
                     variant="h5"
                     component="div"
+                    fontWeight={700}
                   >
                     {myData.main.temp.toFixed()}°C
                   </Typography>
@@ -116,13 +123,23 @@ const Weather = () => {
                     variant="h5"
                     component="div"
                   >
-                    <Typography gutterBottom variant="body2" component="div">
+                    <Typography
+                      gutterBottom
+                      variant="body2"
+                      component="div"
+                      fontWeight={700}
+                    >
                       <LocalFireDepartmentIcon
                         style={{ color: "#ee4300", margin: " -6px 1px" }}
                       />
                       {myData.main.temp_max.toFixed()} °C
                     </Typography>
-                    <Typography gutterBottom variant="body2" component="div">
+                    <Typography
+                      gutterBottom
+                      variant="body2"
+                      component="div"
+                      fontWeight={700}
+                    >
                       <DeviceThermostatIcon
                         style={{ color: "#4cb1ca", margin: " -6px 1px" }}
                       />
@@ -130,8 +147,14 @@ const Weather = () => {
                     </Typography>
                   </Typography>
 
-                  <Typography className="humidity"  gutterBottom variant="body2" component="div">
-                    <WiHumidity/>
+                  <Typography
+                    className="humidity"
+                    gutterBottom
+                    variant="body2"
+                    component="div"
+                    fontWeight={700}
+                  >
+                    <WiHumidity />
                     {myData.main.humidity} %
                   </Typography>
                 </Typography>
@@ -139,8 +162,7 @@ const Weather = () => {
             </CardActionArea>
           </Card>
         )}
-      </div>
-
+      </Box>
       <ToastContainer />
     </form>
   );
